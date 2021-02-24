@@ -35,7 +35,7 @@ input {
             flex-direction: column !important;
     width: 90% !important;
     padding: 0 2em;
-    height: 70% !important;
+    min-height: 70% !important;
   }
   .d-none-sm {
     display: none;
