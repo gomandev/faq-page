@@ -1,0 +1,242 @@
+$midnight: #2c3e50;
+$clouds: #ecf0f1;
+$bold-lg: 700;
+$bold-sm: 400;
+$text-darker: hsl(237, 12%, 33%);
+$text-dark: hsl(240, 6%, 50%);
+$transparent: transparent;
+$soft-red: hsl(14, 88%, 65%);
+$tab-font: 1rem;
+$tab-font-mobile: 0.85rem;
+$tab-font-content: 0.75rem;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 12px;
+  font-family: "Kumbh Sans", sans-serif;
+  background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+img,
+svg {
+  width: 100%;
+  object-fit: cover;
+}
+
+input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+@media screen and (max-width: 375px) {
+  .tab-container {
+    flex-direction: column !important;
+    width: 90% !important;
+    padding: 0 2em;
+    height: 70% !important;
+  }
+  .d-none-sm {
+    display: none;
+  }
+  .right-inner {
+    margin: 0em !important;
+    height: 100%;
+  }
+  .left {
+    flex: none !important;
+  }
+  .title {
+    text-align: center;
+  }
+  .bg-wrapper-mobile {
+    margin-top: -100px;
+    margin-right: 20px;
+  }
+  .bg-wrapper-mobile-1 {
+    margin-top: -110px;
+  }
+  .d-none-lg {
+    display: block !important;
+  }
+  .right {
+    margin-left: 0 !important;
+    margin-bottom: 4em !important;
+    flex: none !important;
+  }
+  .tab {
+    &-label {
+      font-size: $tab-font-mobile !important;
+      &::after {
+        width: 0.5em !important;
+        height: 0.5em !important;
+      }
+      &:hover {
+        color: $soft-red;
+      }
+    }
+  }
+}
+
+.left {
+  flex-basis: 50%;
+}
+
+.right {
+  flex-basis: 50%;
+  margin-left: 5em;
+}
+
+.d-none-lg {
+  display: none;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.tab-container {
+  height: 70%;
+  width: 70%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 20px;
+  position: relative;
+  -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+.main-bg {
+  max-width: 100%;
+  height: 100%;
+}
+
+.bg-wrapper {
+  margin-left: -550px;
+  margin-top: -280px;
+}
+
+/* .main-bg-1 {
+  max-width: 100%;
+  height: 100%;
+} */
+
+.bg-wrapper-1 {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  margin-left: -50px;
+}
+
+.bg-wrapper-2 {
+  position: absolute;
+  top: 35%;
+  left: 0;
+  margin-left: -130px;
+}
+
+.right-inner {
+  margin-top: 4em;
+  margin-right: 8em;
+}
+
+.title {
+  font-weight: $bold-lg;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: $text-darker;
+}
+
+.tabs {
+  // border-radius: 8px;
+  // overflow: hidden;
+  // box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+}
+.tab {
+  width: 100%;
+  color: $text-dark;
+  overflow: hidden;
+  border-bottom: $text-dark 1px solid;
+  &-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em 0;
+    background: $transparent;
+    font-weight: $bold-sm;
+    cursor: pointer;
+    font-size: $tab-font;
+    &::after {
+      background-image: url(./images/icon-arrow-down.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      content: "";
+      width: 1em;
+      height: 1em;
+      text-align: center;
+      transition: all 0.35s;
+    }
+    &:hover {
+      color: $soft-red;
+    }
+  }
+  &-content {
+    max-height: 0;
+    padding: 0 1em;
+    color: $midnight;
+    background: white;
+    transition: all 0.35s;
+  }
+  &-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+    background: $midnight;
+    cursor: pointer;
+    &:hover {
+      background: darken($midnight, 10%);
+    }
+  }
+}
+
+// :checked
+input:checked {
+  + .tab-label {
+    background: $transparent;
+    color: $text-darker;
+    &::after {
+      transform: rotate(180deg);
+    }
+  }
+  ~ .tab-content {
+    max-height: 100vh;
+    padding: 1em;
+  }
+}
+
+.tab-content {
+  font-size: $tab-font-content;
+  color: $text-dark;
+  line-height: 1.3;
+}
+
+.inner-tab {
+  display: contents;
+  justify-content: space-between;
+  > img {
+    width: 30px;
+    height: 30px;
+  }
+}
