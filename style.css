@@ -28,6 +28,9 @@ input {
 }
 
 @media screen and (max-width: 375px) {
+  .wrapper {
+    margin-top: 3em;
+  }
   .tab-container {
     -webkit-box-orient: vertical !important;
     -webkit-box-direction: normal !important;

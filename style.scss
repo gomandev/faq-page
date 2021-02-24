@@ -37,6 +37,9 @@ input {
 }
 
 @media screen and (max-width: 375px) {
+  .wrapper {
+    margin-top: 3em;
+  }
   .tab-container {
     flex-direction: column !important;
     width: 90% !important;
